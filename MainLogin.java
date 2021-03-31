@@ -52,7 +52,7 @@ public class MainLogin extends JFrame implements ActionListener{
 		pwdLabel.setBounds(38,45,135,20);
 		
 		 //welcome Label
-		welcome = new JLabel("안녕하세요. " + fake.fakeName + "님");
+		welcome = new JLabel("안녕하세요. " + fake.name + "님");
 		welcome.setBounds(5,-123,300,300);
 		welcome.setFont(new Font(null,Font.CENTER_BASELINE,30));
 		welcome.setVisible(false);
@@ -129,14 +129,10 @@ public class MainLogin extends JFrame implements ActionListener{
 		
 		MainLogin logInfo = new MainLogin();
 		
-		//유저 아이디, 비밀번호 설정
-		String userID = fake.fakeID;
-		String userPwd = fake.fakePW;
-		
 		
 		//로그인 버튼 눌렀을 때
 		if(e.getSource()==logInBtn) {			
-			if(ID.getText().equals(userID)&&PASSWORD.getText().equals(fake.fakePW)) {
+			if(ID.getText().equals(fake.userId)&&PASSWORD.getText().equals(fake.password)) {
 				logInfo.logInPanel.setVisible(false);
 				logInfo.mainTitle.setVisible(false);
 				logInfo.subTitle.setVisible(false);
@@ -144,9 +140,10 @@ public class MainLogin extends JFrame implements ActionListener{
 				logInfo.add(loggedInPanel);
 				welcome.setVisible(true);
 				logInfo.add(loggedInPanel2.reserve);
+				
 				//Buttons
 				for(int i = 0; i < 12; i++) {
-					loggedInPanel.reserveBtn[i] = new JButton("<HTML>본관 202호실<br>예약 현황20/40<br>좌석초기화:2021/03/09<br>앞으로 27일 5시간 39분<HTML>");
+					loggedInPanel.reserveBtn[i] = new JButton("<HTML>" + fake.relistedRoom[0] + "<br>예약 현황20/40<br>좌석초기화:2021/03/09<br>앞으로 27일 5시간 39분<HTML>");
 					loggedInPanel.reserveBtn[i].setBackground(Color.gray.brighter());
 					loggedInPanel.reserveBtn[i].setBorder(null);
 					loggedInPanel.reserveBtn[i].addActionListener((ActionListener) new ActionListener() {
