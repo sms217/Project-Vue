@@ -16,8 +16,7 @@ public class MainLoginOld extends JFrame implements ActionListener{
 	JTextField ID;
 	JPasswordField PASSWORD;;
 	JButton logInBtn, signUpBtn, signUpBtn2;
-	LoggedInPanel loggedInPanel = new LoggedInPanel();
-	LoggedInPanel2 loggedInPanel2 = new LoggedInPanel2();
+	LoggedInPanel loggedInPanel = new LoggedInPanel(null);
 	FakeDB fake = new FakeDB();
 	HttpCaller hc = new HttpCaller();
 	
@@ -144,7 +143,7 @@ public class MainLoginOld extends JFrame implements ActionListener{
 				logInfo.add(welcome);
 				logInfo.add(loggedInPanel);
 				welcome.setVisible(true);
-				logInfo.add(loggedInPanel2.reserve);
+//				logInfo.add(loggedInPanel2.reserve);
 				
 				//Buttons
 				for(int i = 0; i < 12; i++) {
@@ -158,7 +157,7 @@ public class MainLoginOld extends JFrame implements ActionListener{
 													for(int i=0; i <12; i++) {
 														loggedInPanel.reserveBtn[i].setVisible(false);
 													}
-													loggedInPanel2.reserve.setVisible(false);
+//													loggedInPanel2.reserve.setVisible(false);
 													System.out.println(5496);
 												}
 											});
