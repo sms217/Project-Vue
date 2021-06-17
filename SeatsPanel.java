@@ -62,20 +62,23 @@ class SeatsPanel extends JPanel implements ActionListener{
 	   
 //	   
 
-	   int column=10;
-	   int row=10;
-	   int maxseat=column*row;
-	   
+	  
 	   
 	   ArrayList<reserves> reservedData =new ArrayList();
 	   
-	   JButton[] btn = new JButton[maxseat];
-	   JButton[] btn2= new JButton[maxseat];
 	   
 	   int[] colblock = {2,5};
 	   boolean colblocks =false;
 	   int[] roblock = {3,7};
 	   boolean rowblock=false;
+	   
+	   int column=10+colblock.length;
+	   int row=10+roblock.length;
+	   int maxseat=column*row;
+	   
+	   JButton[] btn = new JButton[maxseat];
+	   JButton[] btn2= new JButton[maxseat];
+	   
 
 	   public SeatsPanel() {
 	      this.setLayout(null);
