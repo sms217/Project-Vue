@@ -29,9 +29,9 @@ public class LoggedInPanel extends JPanel{
 		this.reserveBtn = new JButton[boxCount];
 	
 		//PanelSetting
-		btnPanel.setPreferredSize(new Dimension(600, (50 / 4 + 1) * 100));
-		scroll.setPreferredSize(new Dimension(600, 405));
-		this.setBounds(6, 49, 600, 405);
+		btnPanel.setPreferredSize(new Dimension(750, (50 / 4 + 1) * 100));
+		scroll.setPreferredSize(new Dimension(750, 405));
+		this.setBounds(6, 49, 750, 405);
 			
 		for(int i = 0; i < roomsData.length(); i++) {
 			int roomNum = roomsData.getJSONObject(i).getInt("roomNum");
